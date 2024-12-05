@@ -175,8 +175,8 @@
         <mxCell id="nmM_pcnVhzWw3TYfgnPR-40" value="gender = &quot;Female" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="250" y="850" width="90" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="nmM_pcnVhzWw3TYfgnPR-45" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;rotation=-90;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="297.5" y="807.5" width="120" height="15" as="geometry" />
+        <mxCell id="nmM_pcnVhzWw3TYfgnPR-45" value="" style="shape=partialRectangle;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;rotation=-90;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="287" y="808.75" width="120" height="12.5" as="geometry" />
         </mxCell>
         <mxCell id="nmM_pcnVhzWw3TYfgnPR-46" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nmM_pcnVhzWw3TYfgnPR-45" edge="1">
           <mxGeometry x="-0.4444" y="10" relative="1" as="geometry">
