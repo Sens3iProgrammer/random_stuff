@@ -22,7 +22,7 @@ public class InfoRecord {
                 System.out.println("2 - View Profile");
                 System.out.println("3 - Edit Profile");
                 System.out.println("4 - Delete Profile");
-                System.out.println("5 - Cancel");
+                System.out.println("5 - Close");
                 choice = sc.nextInt();
                 sc.nextLine();
                 
@@ -98,44 +98,71 @@ public class InfoRecord {
                             int editProfile = sc.nextInt() - 1;
                             sc.nextLine();
                             
-                            System.out.print("Enter first name: ");
-                            String editFname = sc.nextLine();
-                            System.out.print("Enter last name: ");
-                            String editLname = sc.nextLine();
-                            System.out.print("Enter age: ");
-                            int editAge = sc.nextInt();
-                            sc.nextLine();
-
-                            String editGender;
-                            while(true){
-                            System.out.print("Enter gender (M - Male, F - Female): ");
-                            editGender = sc.nextLine();
-
-                            if (editGender.equalsIgnoreCase("M")){
-                                editGender = "Male";
-                                break;
-                            }else if(editGender.equalsIgnoreCase("F")){
-                                editGender = "Female";
-                                break;
-                            }else{
-                                System.out.println("M or F only");
-                            }
-                        }
-                    //Output
-                        System.out.println("Full Name: " + editFname + " " + editLname);
-                        System.out.println("Age: " + editAge);
-                        System.out.println("Gender: " + editGender);
-                        
-                        //Editing Profile
-                        nameList.set(editProfile, editFname + " " + editLname);
-                        ageList.set(editProfile, editAge);
-                        genderList.set(editProfile, editGender);
+                            //Picking edit
+                            System.out.println("What do you want to edit?");
+                            System.out.println("1 - Full Name");
+                            System.out.println("2 - Age");
+                            System.out.println("3 - Gender");
                             
-                        }
-                        break;
+                            int editChoice = sc.nextInt();
+                            sc.nextLine();
+                            
+                            switch (editChoice){
+                            //Full Name Edit
+                                case 1: 
+                                    System.out.print("Enter first name: ");
+                                    String editFname = sc.nextLine();
+                                    System.out.println("Enter last name: ");
+                                    String editLname = sc.nextLine();
+                                    //Output
+                                    System.out.println("Full Name: " + editFname + " " + editLname);
+                                    
+                                    
+                                    nameList.set(editProfile, editFname + " " + editLname);
+                                    break;
+                                    
+                             //Age Edit
+                                case 2: 
+                                    System.out.println("Enter age: ");
+                                    int editAge = sc.nextInt();
+                                    sc.nextLine();
+                                    //Output
+                                    System.out.println("Age: " + editAge);
+                                    
+                                    ageList.set(editProfile, editAge);
+                                    break;
+                                   
+                              //Gender Edit
+                                case 3:
+                                    String editGender;
+                                    while (true){
+                                        System.out.println("Enter Gender (M - Male, F - Female): ");
+                                        editGender = sc.nextLine();
+                                        
+                                       if (editGender.equalsIgnoreCase("M")){
+                                       editGender = "Male";
+                                       break;
+                                       }else if(editGender.equalsIgnoreCase("F")){
+                                       editGender = "Female";
+                                       break;
+                                       } else{
+                                       System.out.println("M or F only");
+                                       }
+                                    }
+                                    //Output
+                                    System.out.println("Gender: " + editGender );
+                                    
+                                    genderList.set(editProfile, editGender);
+                                    break;
+                                default:
+                                    System.out.println("1 - 3 only");
+                                    
+                            }
+                        }break;
                         
                     // Delete Profile   
                     case 4:
+                        while (true){
                         System.out.println("===== Delete Profile =====");
                         if (nameList.isEmpty()){
                             System.out.println("The list is empty. ");
@@ -149,22 +176,24 @@ public class InfoRecord {
                             
                             //Confirmation
                             String removeProf;
-                            while (true){
-                                System.out.println("Are you sure you want to delete? (y/n");
+                            
+                                System.out.println("Are you sure you want to delete? (y/n)");
                                 removeProf = sc.nextLine();
                                 
                                 if (removeProf.equalsIgnoreCase("y")){
-                                    
-                                }
+                                    nameList.remove(deleteProfile);
+                                    ageList.remove(deleteProfile);
+                                    genderList.remove(deleteProfile);
+                                    System.out.println("Profile Deleted.");
+                                    break;
+                                } else if(removeProf.equalsIgnoreCase("n")){
+                                    continue;
+                                } else{
+                                    System.out.println("Y or N only.");
+                                    continue;
+                                }    
                                 
                             }
-                            
-                            //Deleting Profile
-                            nameList.remove(deleteProfile);
-                            ageList.remove(deleteProfile);
-                            genderList.remove(deleteProfile);
-                            System.out.println("Profile Deleted");
-                            
                             break;
                         }   
                     
