@@ -29,6 +29,7 @@ public class InfoRecord {
                 switch (choice){
                     //Create Profile
                     case 1:
+                    System.out.println("====== Create Profile ======");
                     System.out.print("Enter first name: ");
                     String fname = sc.nextLine();
                     System.out.print("Enter last name: ");
@@ -82,6 +83,7 @@ public class InfoRecord {
                             System.out.println("Full Name: " + nameList.get(viewProfile) );
                             System.out.println("Age: " + ageList.get(viewProfile));
                             System.out.println("Gender: " + genderList.get(viewProfile));
+                            System.out.println("");
                         }
                         break;
                     
@@ -119,6 +121,7 @@ public class InfoRecord {
                                     
                                     
                                     nameList.set(editProfile, editFname + " " + editLname);
+                                    
                                     break;
                                     
                              //Age Edit
